@@ -11,12 +11,11 @@ export class HomeComponent {
   results: Object;
   searchTerm = new Subject<string>();
 
-  constructor(private searchService: SearchRepoService) {
-    this.searchService.search(this.searchTerm)
+  constructor(private searchRepoService: SearchRepoService) {
+    this.searchRepoService.search(this.searchTerm)
       .subscribe(results => {
         this.results = results;
         console.log('searching');
       });
   }
-
 }
