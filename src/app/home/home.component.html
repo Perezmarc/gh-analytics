@@ -1,16 +1,10 @@
 <div class="container">
   <input type="text" (keyup)="searchTerm.next($event.target.value)">
   <h2>Repos matching your search: </h2>
-  <ul>
-    <li>
-      <app-repo-list-item></app-repo-list-item>
-    </li>
-    <li>
-      <app-repo-list-item></app-repo-list-item>
-    </li>
-    <li>
-      <app-repo-list-item></app-repo-list-item>
-    </li>
-  </ul>
+
+    <div *ngFor="let repo of repos">
+      <app-repo-list-item [repo]="repo"></app-repo-list-item>
+    </div>
+
 
 </div>

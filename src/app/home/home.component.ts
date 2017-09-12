@@ -8,14 +8,14 @@ import { Subject } from 'rxjs/Subject';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-  results: Object;
+  repos: Object;
   searchTerm = new Subject<string>();
 
   constructor(private searchRepoService: SearchRepoService) {
     this.searchRepoService.search(this.searchTerm)
+      .map(results => results.json().items)
       .subscribe(results => {
-        this.results = results;
-        console.log('searching');
+        this.repos = results;
       });
   }
 }
