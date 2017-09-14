@@ -25,7 +25,6 @@ export class SearchRepoService {
             return Observable.of({})
           }
         });
-
   }
 
   searchEntries(term) {

@@ -5,8 +5,8 @@ import { RepoListItemComponent } from './repo-list-item/repo-list-item.component
 import { SharedModule } from '../shared.module';
 
 @NgModule({
-  imports: [CommonModule, SharedModule],
-  declarations: [HomeComponent, RepoListItemComponent],
-  exports: [HomeComponent]
+  imports: [ SharedModule ],
+  declarations: [ HomeComponent, RepoListItemComponent],
+  exports: [ HomeComponent ]
 })
 export class HomeModule { }

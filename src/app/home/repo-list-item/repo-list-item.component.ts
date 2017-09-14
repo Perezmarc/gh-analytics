@@ -1,4 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, HostBinding } from '@angular/core';
+import { slideInOutAnimation } from '../../_animations/slide-in-out.animation';
+import { trigger, state, animate, transition, style, keyframes } from '@angular/animations';
 
 @Component({
   selector: 'app-repo-list-item',

@@ -3,7 +3,7 @@ import { HomeComponent } from './home/home.component';
 import { RepoDetailComponent } from './repo-detail/repo-detail.component';
 
 export const appRoutes: Routes = [
-  { path: 'repo/:id', component: RepoDetailComponent },
+  { path: 'repos/:owner/:reponame', component: RepoDetailComponent },
   { path: '',
     pathMatch: 'full',
     component: HomeComponent,

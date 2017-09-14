@@ -1,3 +1,28 @@
-<p>
-  repo-detail works!
-</p>
+<div class="repo-detail-wrapper">
+  <div class="container" *ngIf="repo == null">
+    Loading...
+  </div>
+
+  <div class="container " *ngIf="repo != null">
+    <h3><a><span>{{repo.owner.login || ''}}</span> / <span class="repo-name">{{repo.name || ''}}</span></a></h3>
+    <p>{{repo.description | truncate: 100}}</p>
+
+    <div style="display: block;" *ngIf="commits.keys.length > 0">
+    <canvas baseChart width="400" height="100"
+                [datasets]="commits.values"
+                [labels]="commits.keys"
+                [options]="lineChartOptions"
+                [colors]="lineChartColors"
+                [chartType]="lineChartType"></canvas>
+    </div>
+
+    <ul>
+      <li class="" *ngFor="let contributor of contributors.results">
+        {{contributor.author.login}} - {{contributor.total}}
+      </li>
+    </ul>
+    <div class="">
+      <a (click)="getNextContributors()" *ngIf="contributors.next">See more</a>
+    </div>
+  </div>
+</div>

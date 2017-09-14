@@ -1,6 +1,6 @@
 <div class="repo-list-item-wrapper">
   <div class="container ">
-    <h3><a><span>{{repo.owner.login || ''}}</span> / <span class="repo-name">{{repo.name || ''}}</span></a></h3>
+    <h3><a routerLink="/repos/{{repo.owner.login | lowercase}}/{{repo.name | lowercase}}"><span>{{repo.owner.login || ''}}</span> / <span class="repo-name">{{repo.name || ''}}</span></a></h3>
     <p>{{repo.description | truncate: 100}}</p>
   </div>
 </div>
